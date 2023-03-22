@@ -1,0 +1,346 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #333;
+  color: #eee;
+  font-family: "Montserrat";
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+[class*="__container"] {
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 0 15px;
+}
+
+// ====================================================
+
+// COMMON
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+// HEADER
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  // margin-bottom: 30px;
+  background-color: #222;
+  @media (max-width: 650px) {
+    margin-bottom: 20px;
+  }
+
+  &__container {
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+  }
+}
+
+// MAIN
+.main {
+  padding-bottom: 140px;
+  & > * {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &:nth-child(even) {
+      background-color: #444;
+    }
+  }
+  &__square {
+  }
+  &__type {
+  }
+  &__building {
+  }
+  &__rooms {
+  }
+  &__options {
+  }
+}
+
+// SQUARE
+.square {
+  &__container {
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__apartment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    & > * {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__value {
+    border-radius: 10px;
+    font-size: 22px;
+    color: inherit;
+    font-weight: 700;
+    padding: 10px 20px;
+    background-color: #555;
+    border: 1px solid #222;
+  }
+
+  &__range {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__minmax {
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  &__min {
+  }
+
+  &__max {
+  }
+}
+
+
+// TYPE
+.type {
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &__body {
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__input {
+    margin-right: 15px;
+  }
+
+  &__items {
+    & > * {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+  }
+
+  &__subname {
+    font-size: 14px;
+    color: #ccc;
+  }
+}
+
+// BUILDING
+.building {
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &__body {
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__input {
+    margin-right: 15px;
+  }
+
+  &__items {
+    & > * {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+  }
+
+  &__subname {
+    font-size: 14px;
+    color: #ccc;
+  }
+}
+
+// ROOMS
+.rooms {
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__item {
+  }
+
+  &__input {
+    opacity: 0;
+    appearance: none;
+    height: 0;
+    width: 0;
+    margin: 0;
+  }
+
+  &__name {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    // color: #444;
+    border-radius: 10px;
+  }
+
+  .rooms__input:checked + .rooms__name {
+    background-color: #555;
+  }
+}
+
+
+// OPTIONS 
+.options {
+
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &__body {
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__input {
+    margin-right: 15px;
+  }
+
+  &__items {
+    & > * {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+  }
+
+  &__subname {
+    font-size: 14px;
+    color: #ccc;
+  }
+}
+
+// CALC-PRICE
+.calc-price {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #222;
+  padding: 20px 50px;
+  box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__total {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+}
+.rub {
+  &::after{
+    content:' ₽';
+    font-weight: 400;
+  }
+}
+.msq {
+  &::after{
+    content:'²';
+  }
+}

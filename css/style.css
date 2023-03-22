@@ -1,0 +1,254 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap);
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #333;
+  color: #eee;
+  font-family: "Montserrat";
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+[class*=__container] {
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 0 15px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: #222;
+}
+@media (max-width: 650px) {
+  .header {
+    margin-bottom: 20px;
+  }
+}
+.header__title {
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+.header__subtitle {
+  font-size: 18px;
+}
+
+.main {
+  padding-bottom: 140px;
+}
+.main > * {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.main > *:nth-child(even) {
+  background-color: #444;
+}
+.square__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.square__apartment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+.square__apartment > *:not(:last-child) {
+  margin-right: 10px;
+}
+.square__title {
+  margin-bottom: 0;
+}
+.square__value {
+  border-radius: 10px;
+  font-size: 22px;
+  color: inherit;
+  font-weight: 700;
+  padding: 10px 20px;
+  background-color: #555;
+  border: 1px solid #222;
+}
+.square__range:not(:last-child) {
+  margin-bottom: 5px;
+}
+.square__minmax {
+  pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 14px;
+  color: #ccc;
+}
+.type__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.type__row:not(:last-child) {
+  margin-bottom: 20px;
+}
+.type__input {
+  margin-right: 15px;
+}
+.type__items > *:not(:last-child) {
+  margin-bottom: 5px;
+}
+.type__name {
+  font-size: 18px;
+}
+.type__subname {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.building__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.building__row:not(:last-child) {
+  margin-bottom: 20px;
+}
+.building__input {
+  margin-right: 15px;
+}
+.building__items > *:not(:last-child) {
+  margin-bottom: 5px;
+}
+.building__name {
+  font-size: 18px;
+}
+.building__subname {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.rooms__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+}
+.rooms__input {
+  opacity: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+.rooms__name {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.rooms .rooms__input:checked + .rooms__name {
+  background-color: #555;
+}
+
+.options__option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.options__option:not(:last-child) {
+  margin-bottom: 20px;
+}
+.options__input {
+  margin-right: 15px;
+}
+.options__items > *:not(:last-child) {
+  margin-bottom: 5px;
+}
+.options__name {
+  font-size: 18px;
+}
+.options__subname {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.calc-price {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #222;
+  padding: 20px 50px;
+  -webkit-box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+.calc-price__title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.calc-price__total {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.rub::after {
+  content: " ₽";
+  font-weight: 400;
+}
+
+.msq::after {
+  content: "²";
+}

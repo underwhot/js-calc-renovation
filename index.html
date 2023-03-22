@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- https://www.youtube.com/watch?v=pIgyoL5FjgI -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Apartment renovation calculator</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__title">Калькулятор стоимости ремонта</div>
+        <div class="header__subtitle">Базовая цена: <span class="msq">1 м</span> = <span id="base-prise" class="rub">6000</spa></div>
+      </div>
+    </header>
+    <main class="main">
+
+      <div class="main__square square">
+        <div class="square__container">
+          <div class="square__row">
+            <label class="square__apartment">
+              <span class="square__title title">Площадь квартиры:</span>
+              <input type="number" min="0" max="200" value="30" id="square-input" class="square__value">
+              <span class="square__title title msq">м</span>
+            </label>
+            <input type="range" id="square-range" class="square__range" min="0" max="200" value="30" step="1">
+            <div class="square__minmax">
+              <div class="square__min">0</div>
+              <div class="square__max">200</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main__type type">
+        <div class="type__container">
+          <div class="type__title title">Тип ремонта</div>
+          <div class="type__body">
+            <label class="type__row">
+              <input class="type__input" type="radio" name="type" value="1">
+              <div class="type__items">
+                <div class="type__name">Косметический</div>
+              </div>
+            </label>
+            <label class="type__row">
+              <input class="type__input" type="radio" name="type" value="1.3" checked>
+              <div class="type__items">
+                <div class="type__name">Капитальный</div>
+                <div class="type__subname">+30% к стоимости</div>
+              </div>
+            </label>
+            <label class="type__row">
+              <input class="type__input" type="radio" name="type" value="1.5">
+              <div class="type__items">
+                <div class="type__name">Под ключ</div>
+                <div class="type__subname">+50% к стоимости</div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="main__building building">
+        <div class="building__container">
+          <div class="building__title title">Тип дома</div>
+          <div class="building__body">
+            <label class="building__row">
+              <input class="building__input" type="radio" name="building" value="1" checked>
+              <div class="building__items">
+                <div class="building__name">Новострой</div>
+              </div>
+            </label>
+            <label class="building__row">
+              <input class="building__input" type="radio" name="building" value="1.1">
+              <div class="building__items">
+                <div class="building__name">Вторичка</div>
+                <div class="building__subname">+10% к стоимости</div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="main__rooms rooms">
+        <div class="rooms__container">
+          <div class="rooms__title title">Количество комнат</div>
+          <div class="rooms__body">
+            <label class="rooms__item">
+              <input type="radio" name="rooms" class="rooms__input" value="0.8">
+              <div class="rooms__name">C</div>
+            </label>
+            <label class="rooms__item">
+              <input type="radio" name="rooms" class="rooms__input" value="1" checked>
+              <div class="rooms__name">1</div>
+            </label>
+            <label class="rooms__item">
+              <input type="radio" name="rooms" class="rooms__input" value="2" >
+              <div class="rooms__name">2</div>
+            </label>
+            <label class="rooms__item">
+              <input type="radio" name="rooms" class="rooms__input" value="3">
+              <div class="rooms__name">3</div>
+            </label>
+            <label class="rooms__item">
+              <input type="radio" name="rooms" class="rooms__input" value="4">
+              <div class="rooms__name">4</div>
+            </label>
+            <label class="rooms__item">
+              <input type="radio" name="rooms" class="rooms__input" value="5">
+              <div class="rooms__name">5</div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="main__options options">
+        <div class="options__container">
+          <div class="options__title title">Дополнительные опции</div>
+          <div class="options__body">
+            <label class="options__option">
+              <input type="checkbox" name="ceiling" class="options__input" value="900">
+              <div class="options__items">
+                <div class="options__name">Натяжные потолки</div>
+                <div class="options__subname">900 руб. за <span class="msq">м</span></div>
+              </div>
+            </label>
+            <label class="options__option">
+              <input type="checkbox" name="walls" class="options__input" value="1.1">
+              <div class="options__items">
+                <div class="options__name">Покраска стен</div>
+                <div class="options__subname">+10% к стоимости</div>
+              </div>
+            </label>
+            <label class="options__option">
+              <input type="checkbox" name="floor" class="options__input" value="1.1">
+              <div class="options__items">
+                <div class="options__name">Теплый пол</div>
+                <div class="options__subname">+10% к стоимости</div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <div class="calc-price">
+      <div class="calc-price__title">Стоимость ремонта:</div>
+      <div id="calc-price" class="calc-price__total rub">0</div>
+    </div>
+
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
